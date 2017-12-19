@@ -5,11 +5,8 @@ module.exports = {
 
   'connect' : function(){
     var defer = Q.defer();
-    console.log("connect..123");
-    console.log(dbM);
     dbM.connect('mongodb://localhost:27017/test', function (err, db) {
-      console.log("iiiiiii");
-      console.log(db);
+      console.log("connection with mongodb...");
       defer.resolve({'connection':db});
 
       // if (err) throw err

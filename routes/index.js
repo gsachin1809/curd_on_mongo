@@ -8,10 +8,16 @@ router.get('/', function(req, res, next) {
   console.log("this is root ");
   res.render('index', { title: 'Express' });
 });
+router.get('/app', function(req, res, next) {
+  console.log("this is root ");
+  res.render('page1');
+});
 
 router.get('/students',StudentController.index);
 router.get('/students/create',StudentController.create);
 router.post('/students/create',StudentController.store);
+router.get('/students/delete/:id',StudentController.delete);
+router.get('/students/show/:id',StudentController.show);
 
 
 router.get('/home', function(req, res, next) {
